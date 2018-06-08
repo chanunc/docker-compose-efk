@@ -32,7 +32,13 @@ services:
     mem_limit: 1g
 
   kibana:
-    image: docker.elastic.co/kibana/kibana:6.2.4
+    image: docker.elastic.co/kibana/kibana-oss:6.2.4
+    # image: docker.elastic.co/kibana/kibana:6.2.4
+    # environment: 
+      # - XPACK_GRAPH_ENABLED=false
+      # - XPACK_MONITORING_ENABLED=false
+      # - XPACK_REPORTING_ENABLED=false
+      # - XPACK_SECURITY_ENABLED=false
     links:
       - "elasticsearch"
     ports:
